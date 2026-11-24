@@ -1,0 +1,110 @@
+<mxfile host="drawio" type="device">
+  <diagram id="d1" name="B3.2 DBConfigSingleton">
+    <mxGraphModel dx="900" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="k1" value="RaumMySQLRepository" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="40" y="80" width="300" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="- connection: Connection" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="28" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="- ptmt: PreparedStatement" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="50" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="- resultSet: ResultSet" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="72" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="94" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="- oeffneVerbindung(): Connection" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="102" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="+ erstelleTabelle(): void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="124" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="+ loescheTabelle(): void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="146" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" value="+ hole(id: int): Raum" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="168" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" value="+ holeAlle(): ArrayList&amp;lt;Raum&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="190" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" value="+ erstelle(raum: Raum): int" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="212" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" value="+ aktualisiere(raum: Raum): void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="234" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" value="+ loesche(id: int): void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="256" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" value="+ loesche(raum: Raum): void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k1" vertex="1">
+          <mxGeometry y="278" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="k15" value="&amp;laquo;Singleton&amp;raquo;&lt;br&gt;DBConfigSingleton" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="500" y="80" width="300" height="248" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" value="- instance: DBConfigSingleton" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;fontStyle=4;" parent="k15" vertex="1">
+          <mxGeometry y="42" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" value="- url: String {readOnly}" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k15" vertex="1">
+          <mxGeometry y="64" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c18" value="- user: String {readOnly}" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k15" vertex="1">
+          <mxGeometry y="86" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" value="- password: String {readOnly}" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k15" vertex="1">
+          <mxGeometry y="108" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="l20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" parent="k15" vertex="1">
+          <mxGeometry y="130" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" value="- DBConfigSingleton()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k15" vertex="1">
+          <mxGeometry y="138" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" value="+ getInstance(): DBConfigSingleton" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;fontStyle=4;" parent="k15" vertex="1">
+          <mxGeometry y="160" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" value="+ getUrl(): String" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k15" vertex="1">
+          <mxGeometry y="182" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c24" value="+ getUser(): String" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k15" vertex="1">
+          <mxGeometry y="204" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="c25" value="+ getPassword(): String" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontColor=#000000;" parent="k15" vertex="1">
+          <mxGeometry y="226" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="e26" value="nutzt (Aggregation)" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=0;startSize=14;endSize=10;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#FFFFFF;" parent="1" source="k1" target="k15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m27" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#000000;" parent="e26" vertex="1" connectable="0">
+          <mxGeometry x="0.8" y="-10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28" value="instance (Komposition)" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=1;startSize=14;endSize=10;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#FFFFFF;" parent="1" source="k15" target="k15" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="120" />
+              <mxPoint x="860" y="40" />
+              <mxPoint x="650" y="40" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m29" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#000000;" parent="e28" vertex="1" connectable="0">
+          <mxGeometry x="0.8" y="-10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n30" value="getInstance():&lt;br&gt;&amp;nbsp;&amp;nbsp;WENN instance = NULL DANN&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;instance ← NEU DBConfigSingleton()&lt;br&gt;&amp;nbsp;&amp;nbsp;RÜCKGABE instance" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=6;fillColor=#FFF2CC;strokeColor=#000000;fontColor=#000000;fontFamily=Courier New;" parent="1" vertex="1">
+          <mxGeometry x="500" y="400" width="300" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

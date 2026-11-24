@@ -10,6 +10,14 @@ public class RaumMySQLRepository {
     private PreparedStatement ptmt = null;
     private ResultSet resultSet = null;
 
+    // macht die Verbindung zur Datenbank, die Zugangsdaten kommen aus dem Singleton
+    private Connection oeffneVerbindung() throws SQLException {
+        String url = DBConfigSingleton.getInstance().getUrl();
+        String user = DBConfigSingleton.getInstance().getUser();
+        String password = DBConfigSingleton.getInstance().getPassword();
+        return DriverManager.getConnection(url, user, password);
+    }
+
     public void erstelleTabelle() throws DataGatewayException {
         // Quelle: https://www.tutorialspoint.com/java_mysql/java_mysql_create_tables.htm
         String query = "CREATE TABLE `raeume` (raum_id integer PRIMARY KEY AUTO_INCREMENT, " +
@@ -20,7 +28,7 @@ public class RaumMySQLRepository {
                 "verantwortlicher varchar(20))";
         System.out.println(query);
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams_fx_test", "schueler", "Geheim01");
+            connection = oeffneVerbindung();
             ptmt = connection.prepareStatement(query);
             ptmt.executeUpdate();
         } catch (SQLException e) {
@@ -32,7 +40,7 @@ public class RaumMySQLRepository {
         String query = "DROP TABLE raeume";
         System.out.println(query);
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams_fx_test", "schueler", "Geheim01");
+            connection = oeffneVerbindung();
             ptmt = connection.prepareStatement(query);
             ptmt.executeUpdate();
         } catch (SQLException e) {
@@ -44,7 +52,7 @@ public class RaumMySQLRepository {
         Raum raum = null;
         try {
             String queryString = "SELECT * FROM raeume WHERE raum_id=?";
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams_fx_test", "schueler", "Geheim01");
+            connection = oeffneVerbindung();
             ptmt = connection.prepareStatement(queryString);
             ptmt.setInt(1, id);
             resultSet = ptmt.executeQuery();
@@ -97,7 +105,7 @@ public class RaumMySQLRepository {
 
         try {
             String query = "SELECT * FROM raeume";
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams_fx_test", "schueler", "Geheim01");
+            connection = oeffneVerbindung();
             ptmt = connection.prepareStatement(query);
             resultSet = ptmt.executeQuery();
             while (resultSet.next()) {
@@ -135,7 +143,7 @@ public class RaumMySQLRepository {
         try {
             String query = "INSERT INTO raeume (bezeichnung, gebaeude, laenge_in_cm, breite_in_cm) VALUES (?,?,?,?)";
 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams_fx_test", "schueler", "Geheim01");
+            connection = oeffneVerbindung();
             ptmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             int param = 0;
             ptmt.setString(++param, raumModel.getBezeichnung());
@@ -172,7 +180,7 @@ public class RaumMySQLRepository {
         try {
             String query = "UPDATE `raeume` SET bezeichnung=?, gebaeude=?, laenge_in_cm=?, breite_in_cm=? WHERE raum_id=?";
 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams_fx_test", "Schueler", "Geheim01");
+            connection = oeffneVerbindung();
             ptmt = connection.prepareStatement(query);
             int param = 0;
             ptmt.setString(++param, raumModel.getBezeichnung());
@@ -203,7 +211,7 @@ public class RaumMySQLRepository {
         try {
             String query = "DELETE FROM raeume WHERE raum_id=?";
 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams_fx_test", "schueler", "Geheim01");
+            connection = oeffneVerbindung();
             ptmt = connection.prepareStatement(query);
             ptmt.setInt(1, id);
             ptmt.executeUpdate();
